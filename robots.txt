@@ -1,0 +1,146 @@
+# Crawler policy for the whole of gonzobonzob-bit.github.io
+#
+# WHY THIS FILE IS HERE: crawlers only read robots.txt from the ROOT of a host.
+# A robots.txt inside a project-site repo (e.g. /pv-tools/robots.txt) is never
+# fetched and has no effect. This file, served from
+# https://gonzobonzob-bit.github.io/robots.txt, is the only one that is actually
+# read - and because every GitHub Pages project site shares this hostname, it
+# governs all of them at once:
+#
+#   /pv-tools/**        PV field tools (PW3 String Analyzer, Lynx, Magpie)
+#   /pv-ct-review/**    Lynx (standalone, legacy)
+#   /magpie-notes/**    Magpie (standalone, legacy)
+#   /my-games/**
+#   /solar-reference/**
+#
+# Nothing on this host is intended for search results.
+#
+# NOT ACCESS CONTROL: robots.txt is a request, honored voluntarily. It keeps
+# well-behaved crawlers out; it does not stop anyone who has a URL from opening
+# it, and it does not stop crawlers that ignore the standard. The load-bearing
+# per-page protection remains the <meta name="robots" content="noindex"> tag in
+# each page, which works regardless of path and cannot be skipped by a crawler
+# that fetched the page. Belt and braces: keep both.
+
+User-agent: *
+Disallow: /
+
+# ---------------------------------------------------------------------------
+# AI / dataset crawlers, named explicitly.
+#
+# Several of these ignore a wildcard Disallow but honor their own named block,
+# so the blanket rule above is not sufficient on its own.
+# ---------------------------------------------------------------------------
+
+# OpenAI
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: OAI-SearchBot
+Disallow: /
+
+# Anthropic
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: Claude-SearchBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+# Google - note: Googlebot obeys the wildcard above, but Google-Extended is a
+# separate opt-out specifically for Gemini/Vertex training and must be named.
+User-agent: Google-Extended
+Disallow: /
+
+# Apple
+User-agent: Applebot
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Disallow: /
+
+User-agent: Perplexity-User
+Disallow: /
+
+# Meta
+User-agent: meta-externalagent
+Disallow: /
+
+User-agent: meta-externalfetcher
+Disallow: /
+
+User-agent: FacebookBot
+Disallow: /
+
+# ByteDance
+User-agent: Bytespider
+Disallow: /
+
+User-agent: TikTokSpider
+Disallow: /
+
+# Amazon
+User-agent: Amazonbot
+Disallow: /
+
+# Common Crawl - feeds many downstream training sets
+User-agent: CCBot
+Disallow: /
+
+# Others
+User-agent: cohere-ai
+Disallow: /
+
+User-agent: cohere-training-data-crawler
+Disallow: /
+
+User-agent: Diffbot
+Disallow: /
+
+User-agent: omgili
+Disallow: /
+
+User-agent: omgilibot
+Disallow: /
+
+User-agent: Timpibot
+Disallow: /
+
+User-agent: ImagesiftBot
+Disallow: /
+
+User-agent: Kangaroo Bot
+Disallow: /
+
+User-agent: PanguBot
+Disallow: /
+
+User-agent: Webzio-Extended
+Disallow: /
+
+User-agent: AI2Bot
+Disallow: /
+
+User-agent: SemrushBot-OCOB
+Disallow: /
+
+User-agent: DataForSeoBot
+Disallow: /
+
+User-agent: YouBot
+Disallow: /
+
+User-agent: Scrapy
+Disallow: /
